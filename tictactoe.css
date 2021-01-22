@@ -54,7 +54,7 @@ td {
   width:220px;
   text-align: center;
   font-size: 100px;
-  color: rgb(226, 87, 72);
+  color: rgb(238, 128, 116);
   cursor: pointer;
   background-color: teal;
   border: white 2px solid;
@@ -76,14 +76,3 @@ button {
   cursor: pointer;
 }
 
-@media (hover: hover){
-    
-  td:hover{
-      background: rgb(56, 153, 137);   
-  }
-  button:hover {
-    transform: scale(1.009);
-    background-color: rgba(112, 128, 144, 0.589)
-  }
-  
-}
