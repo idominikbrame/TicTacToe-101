@@ -60,10 +60,6 @@ td {
   border: white 2px solid;
 }
 
-td:hover {
-  background-color: turquoise;
-}
-
 table {
   margin: 20px auto 20px auto;  
 }
@@ -80,17 +76,14 @@ button {
   cursor: pointer;
 }
 
-button:hover {
-  transform: scale(1.009);
-  background-color: rgba(112, 128, 144, 0.589)
-}
-
-@media (max-width: 800px) {
+@media (hover: hover){
+    
+  td:hover{
+      background: rgb(56, 153, 137);   
+  }
   button:hover {
-    transform: none;
-    background-color: slategray;
+    transform: scale(1.009);
+    background-color: rgba(112, 128, 144, 0.589)
   }
-  td:hover {
-    background-color: teal;
-  }
+  
 }
