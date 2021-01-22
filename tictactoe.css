@@ -45,6 +45,10 @@ body {
   flex-direction: column;
 }
 
+.game-container h1 {
+  font-size: 80px;
+}
+
 td {
   height:180px;
   width:180px;
@@ -79,4 +83,14 @@ button {
 button:hover {
   transform: scale(1.009);
   background-color: rgba(112, 128, 144, 0.589)
+}
+
+@media (max-width: 800px) {
+  button:hover {
+    transform: none;
+    background-color: slategray;
+  }
+  td {
+    background-color: teal;
+  }
 }
