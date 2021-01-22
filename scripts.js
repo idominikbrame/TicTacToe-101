@@ -3,7 +3,7 @@
 //       ***********************
 
 
-let currentMarker = 'X'
+let currentMarker = "X"; 
 
 let board= 
 [
@@ -23,7 +23,6 @@ const handleClick = (element) => {
 
 // this function places the "currentMarker" inside the HTML element that was clicked and calls the "changeMarker" function.
 const addMarker = (id) => {
-
   const row = parseInt(id.charAt(0));
   const column= parseInt(id.charAt(2));
   document.getElementById(id).innerHTML = currentMarker;
@@ -54,7 +53,6 @@ const resetBoard = () => {
             ["","",""],
             ["","",""]
             ]
-    currentMarker = "X"
   }  
 }
 
@@ -64,9 +62,9 @@ const resetBoard = () => {
 const checkForWin = () => {
   if(horizontalWin() == true || verticalWin() == true || diagonalWin() == true) 
   { 
-    incrementScore()
     let winner = setTimeout(showWinner, 200);
     let reset = setTimeout(resetBoard, 100)
+    incrementScore()
   } else {
     changeMarker()
   }
@@ -147,6 +145,6 @@ function incrementScore() {
   if (currentMarker == "X") {
     document.getElementById("X").innerHTML = "X's: " + ++scoreX
   } else if (currentMarker == "O") {
-    document.getElementById("O").innerHTML = "X's: " + ++scoreO
+    document.getElementById("O").innerHTML = "0's: " + ++scoreO
   }
 }
