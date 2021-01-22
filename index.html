@@ -7,14 +7,13 @@
     <script src="scripts.js"></script>
   </head>
   <body>
-    <div class="container">
-      <div class="jumbotron">
-        <h1>Welcome to Tic Tac Toe</h1>
-        <p>Get ready to play!</p>
-        <button onclick="resetBoard()" type="button" class="btn btn-primary btn-lg" name="button">Restart</button>
-      </div>
+    <div class="showWinner" id="showWinner">
+      <h1></h1>
+    </div>
+    <div class="game-container">
+      <h1>TIC TAC TOE 101</h1>
       <table>
-        <tr>
+        <tr class="tile-row">
           <td id='0-0' onclick="handleClick(this)" ></td>
           <td id='0-1' onclick="handleClick(this)" ></td>
           <td id='0-2' onclick="handleClick(this)" ></td>
@@ -30,6 +29,12 @@
           <td id='2-2' onclick="handleClick(this)" ></td>
         </tr>
       </table>
+      <button onclick="resetBoard()" type="button" class="btn btn-primary btn-lg" name="button">Reset</button>
+      <div class="score">
+        <h1>Score</h1>
+        <h2 id="X">X's: 00</h2>
+        <h2 id="O">O's: 00</h2>
+      </div>
     </div>
   </body>
 </html>

@@ -1,17 +1,75 @@
-.jumbotron {
-  margin: 5% auto;
-  margin-left: 43%;
+body {
+  margin-top: 100px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+}
+
+
+.score h1 {
+  font-size: 50px;
+}
+
+.showWinner {
+  position: absolute;
+  top: 300px;
+  background-color: salmon;
+  height: 200px;
+  width: 700px;
+  z-index: 1000;
+  color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+}
+
+.showWinner h1 {
+  font-size: 3em;
+}
+
+.game-container {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 td {
-  height:150px;
-  width:150px;
+  height:180px;
+  width:180px;
   text-align: center;
-  border: 5px solid black;
   font-size: 100px;
+  color: rgb(226, 87, 72);
   cursor: pointer;
+  background-color: teal;
+  border: white 2px solid;
+}
+
+td:hover {
+  background-color: turquoise;
 }
 
 table {
-  margin: auto auto;
+  margin: 20px auto 20px auto;  
+}
+
+button {
+  width: 466px;
+  border: none;
+  height: 50px;
+  background-color: slategray;
+  color: whitesmoke;
+  font-size: 20px;
+  outline: none;
+  transition: all 100ms ease-in-out;
+  cursor: pointer;
+}
+
+button:hover {
+  transform: scale(1.009);
+  background-color: rgba(112, 128, 144, 0.589)
 }

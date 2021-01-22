@@ -32,7 +32,7 @@ const addMarker = (id) => {
 }
 
 
-
+//change current marker
 const changeMarker = () => {
   if(currentMarker === "X"){
     currentMarker = "O"
@@ -43,6 +43,7 @@ const changeMarker = () => {
 
 
 
+// reset td's to null
 const resetBoard = () => { 
   const squares = document.getElementsByTagName("td")
   for (i=0; i < squares.length; i++) {
@@ -58,15 +59,21 @@ const resetBoard = () => {
 }
 
 
+
+//initiate checking for win
 const checkForWin = () => {
   if(horizontalWin() == true || verticalWin() == true || diagonalWin() == true) 
-  {
-    alert(`Player ${currentMarker} won!`)
+  { 
+    incrementScore()
+    let winner = setTimeout(showWinner, 200);
+    let reset = setTimeout(resetBoard, 100)
   } else {
     changeMarker()
   }
 }
 
+
+//check for horizontal win
 const horizontalWin = () => {
   if((board[0][0] == "X" && board[0][1] == "X" && board[0][2] == "X") || 
   
@@ -85,6 +92,8 @@ const horizontalWin = () => {
   }
 }
 
+
+//check for vertical win
 const verticalWin = () => {
   if((board[0][0] == "X" && board[1][0] == "X" && board[2][0] == "X") || 
   
@@ -103,6 +112,8 @@ const verticalWin = () => {
   }
 }
 
+
+//check for diagonal win
 const diagonalWin = () => {
   if((board[0][0] == "X" && board[1][1] == "X" && board[2][2] == "X") || 
   
@@ -114,5 +125,28 @@ const diagonalWin = () => {
     return true
   } else {
     return false
+  }
+}
+
+
+//Display winner on screen
+function showWinner(){
+  document.getElementById("showWinner").style.visibility = "visible";
+  document.querySelector("#showWinner h1").innerHTML = "'" + currentMarker + "'" + " is your winner!";
+  let remove = setTimeout(removeWinner, 3500);
+}
+function removeWinner() {
+    document.getElementById("showWinner").style.visibility = "hidden";
+}
+
+
+//Increment Score
+let scoreX = 0;
+let scoreO = 0;
+function incrementScore() {
+  if (currentMarker == "X") {
+    document.getElementById("X").innerHTML = "X's: " + ++scoreX
+  } else if (currentMarker == "O") {
+    document.getElementById("O").innerHTML = "X's: " + ++scoreO
   }
 }
