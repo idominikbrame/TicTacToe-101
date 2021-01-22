@@ -90,7 +90,7 @@ button:hover {
     transform: none;
     background-color: slategray;
   }
-  td {
+  td:hover {
     background-color: teal;
   }
 }
