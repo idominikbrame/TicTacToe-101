@@ -22,9 +22,9 @@ body {
 .showWinner {
   position: absolute;
   top: 300px;
-  background-color: salmon;
-  height: 200px;
-  width: 700px;
+  background-color: rgb(36, 16, 13);
+  height: 10vh;
+  width: 80vw;
   z-index: 1000;
   color: whitesmoke;
   display: flex;
@@ -54,10 +54,14 @@ td {
   width:220px;
   text-align: center;
   font-size: 100px;
-  color: rgb(238, 128, 116);
+  color: rgb(29, 24, 23);
   cursor: pointer;
-  background-color: teal;
+  background-color: rgb(204, 211, 211);
   border: white 2px solid;
+}
+
+td:hover {
+  transform: scale(1.05);
 }
 
 table {

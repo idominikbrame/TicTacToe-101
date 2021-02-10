@@ -12,6 +12,8 @@ let board=
 ["","",""]
 ]
 
+
+
 const handleClick = (element) => {
   console.log(`The element you clicked on has an id:  ${element.id}`)
   if(!document.getElementById(element.id).innerHTML){
@@ -141,10 +143,23 @@ function removeWinner() {
 //Increment Score
 let scoreX = 0;
 let scoreO = 0;
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  scoreX = localStorage.getItem("scoreX");
+  scoreO = localStorage.getItem("scoreO");
+  document.getElementById("X").innerHTML = "X's: " + scoreX;
+  document.getElementById("O").innerHTML = "0's: " + scoreO;
+})
+
+
 function incrementScore() {
   if (currentMarker == "X") {
-    document.getElementById("X").innerHTML = "X's: " + ++scoreX
+    document.getElementById("X").innerHTML = "X's: " + ++scoreX;
   } else if (currentMarker == "O") {
-    document.getElementById("O").innerHTML = "0's: " + ++scoreO
+    document.getElementById("O").innerHTML = "0's: " + ++scoreO;
   }
+  localStorage.setItem("scoreX", scoreX);
+  localStorage.setItem("scoreO", scoreO);
 }
